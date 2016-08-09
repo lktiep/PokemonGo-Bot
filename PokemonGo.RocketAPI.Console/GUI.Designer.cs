@@ -133,6 +133,14 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label30 = new System.Windows.Forms.Label();
+            this.tbxMinIvToKeep = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.tbxMinCpToKeep = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.rbxPriorityIV = new System.Windows.Forms.RadioButton();
+            this.rbxPriorityCP = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -149,6 +157,7 @@
             this.tabItems.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox11.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -371,6 +380,12 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.groupBox11);
+            this.groupBox3.Controls.Add(this.tbxMinCpToKeep);
+            this.groupBox3.Controls.Add(this.label35);
+            this.groupBox3.Controls.Add(this.label34);
+            this.groupBox3.Controls.Add(this.label32);
+            this.groupBox3.Controls.Add(this.tbxMinIvToKeep);
             this.groupBox3.Controls.Add(this.label29);
             this.groupBox3.Controls.Add(this.textBox24);
             this.groupBox3.Controls.Add(this.label28);
@@ -381,7 +396,7 @@
             this.groupBox3.Controls.Add(this.checkBox2);
             this.groupBox3.Location = new System.Drawing.Point(6, 319);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(527, 70);
+            this.groupBox3.Size = new System.Drawing.Size(527, 129);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Bot Settings";
@@ -389,7 +404,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(415, 44);
+            this.label29.Location = new System.Drawing.Point(417, 47);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(15, 13);
             this.label29.TabIndex = 8;
@@ -397,7 +412,7 @@
             // 
             // textBox24
             // 
-            this.textBox24.Location = new System.Drawing.Point(356, 41);
+            this.textBox24.Location = new System.Drawing.Point(356, 44);
             this.textBox24.Name = "textBox24";
             this.textBox24.Size = new System.Drawing.Size(53, 20);
             this.textBox24.TabIndex = 11;
@@ -406,7 +421,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(241, 44);
+            this.label28.Location = new System.Drawing.Point(254, 47);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(96, 13);
             this.label28.TabIndex = 6;
@@ -414,7 +429,7 @@
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(356, 17);
+            this.textBox9.Location = new System.Drawing.Point(356, 18);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(71, 20);
             this.textBox9.TabIndex = 10;
@@ -423,7 +438,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(241, 21);
+            this.label12.Location = new System.Drawing.Point(250, 21);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(100, 13);
             this.label12.TabIndex = 4;
@@ -431,7 +446,7 @@
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(141, 41);
+            this.textBox8.Location = new System.Drawing.Point(166, 41);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(40, 20);
             this.textBox8.TabIndex = 9;
@@ -440,7 +455,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(7, 44);
+            this.label11.Location = new System.Drawing.Point(32, 44);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(132, 13);
             this.label11.TabIndex = 2;
@@ -451,7 +466,7 @@
             this.checkBox2.AutoSize = true;
             this.checkBox2.Checked = true;
             this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox2.Location = new System.Drawing.Point(7, 20);
+            this.checkBox2.Location = new System.Drawing.Point(35, 20);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(174, 17);
             this.checkBox2.TabIndex = 8;
@@ -828,7 +843,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.button1.Location = new System.Drawing.Point(12, 530);
+            this.button1.Location = new System.Drawing.Point(11, 586);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(549, 23);
             this.button1.TabIndex = 35;
@@ -1084,7 +1099,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 100);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(550, 422);
+            this.tabControl1.Size = new System.Drawing.Size(550, 480);
             this.tabControl1.TabIndex = 36;
             // 
             // tabGeneral
@@ -1111,7 +1126,7 @@
             this.tabPokemon.Location = new System.Drawing.Point(4, 22);
             this.tabPokemon.Name = "tabPokemon";
             this.tabPokemon.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPokemon.Size = new System.Drawing.Size(542, 396);
+            this.tabPokemon.Size = new System.Drawing.Size(542, 454);
             this.tabPokemon.TabIndex = 1;
             this.tabPokemon.Text = "Pokemon";
             this.tabPokemon.UseVisualStyleBackColor = true;
@@ -1233,7 +1248,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PokemonGo.RocketAPI.Console.Properties.Resources.donate;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 559);
+            this.pictureBox1.Location = new System.Drawing.Point(11, 615);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(64, 33);
             this.pictureBox1.TabIndex = 21;
@@ -1244,18 +1259,94 @@
             // 
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label30.Location = new System.Drawing.Point(90, 564);
+            this.label30.Location = new System.Drawing.Point(89, 620);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(460, 24);
             this.label30.TabIndex = 45;
             this.label30.Text = "If you run more than 3 Instances, you get Soft Banned.";
+            // 
+            // tbxMinIvToKeep
+            // 
+            this.tbxMinIvToKeep.Location = new System.Drawing.Point(356, 96);
+            this.tbxMinIvToKeep.Name = "tbxMinIvToKeep";
+            this.tbxMinIvToKeep.Size = new System.Drawing.Size(53, 20);
+            this.tbxMinIvToKeep.TabIndex = 13;
+            this.tbxMinIvToKeep.Text = "50";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(268, 99);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(82, 13);
+            this.label32.TabIndex = 14;
+            this.label32.Text = "Min. IV to keep:";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(415, 99);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(15, 13);
+            this.label34.TabIndex = 15;
+            this.label34.Text = "%";
+            // 
+            // tbxMinCpToKeep
+            // 
+            this.tbxMinCpToKeep.Location = new System.Drawing.Point(356, 70);
+            this.tbxMinCpToKeep.Name = "tbxMinCpToKeep";
+            this.tbxMinCpToKeep.Size = new System.Drawing.Size(71, 20);
+            this.tbxMinCpToKeep.TabIndex = 17;
+            this.tbxMinCpToKeep.Text = "500";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(264, 72);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(86, 13);
+            this.label35.TabIndex = 16;
+            this.label35.Text = "Min. CP to keep:";
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.rbxPriorityCP);
+            this.groupBox11.Controls.Add(this.rbxPriorityIV);
+            this.groupBox11.Location = new System.Drawing.Point(98, 70);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(108, 44);
+            this.groupBox11.TabIndex = 18;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Priority";
+            // 
+            // rbxPriorityIV
+            // 
+            this.rbxPriorityIV.AutoSize = true;
+            this.rbxPriorityIV.Checked = true;
+            this.rbxPriorityIV.Location = new System.Drawing.Point(15, 19);
+            this.rbxPriorityIV.Name = "rbxPriorityIV";
+            this.rbxPriorityIV.Size = new System.Drawing.Size(35, 17);
+            this.rbxPriorityIV.TabIndex = 0;
+            this.rbxPriorityIV.TabStop = true;
+            this.rbxPriorityIV.Text = "IV";
+            this.rbxPriorityIV.UseVisualStyleBackColor = true;
+            // 
+            // rbxPriorityCP
+            // 
+            this.rbxPriorityCP.AutoSize = true;
+            this.rbxPriorityCP.Location = new System.Drawing.Point(60, 19);
+            this.rbxPriorityCP.Name = "rbxPriorityCP";
+            this.rbxPriorityCP.Size = new System.Drawing.Size(39, 17);
+            this.rbxPriorityCP.TabIndex = 1;
+            this.rbxPriorityCP.Text = "CP";
+            this.rbxPriorityCP.UseVisualStyleBackColor = true;
             // 
             // GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(576, 605);
+            this.ClientSize = new System.Drawing.Size(576, 653);
             this.Controls.Add(this.label30);
             this.Controls.Add(this.lang_france_btn);
             this.Controls.Add(this.lang_ru_btn);
@@ -1301,6 +1392,8 @@
             this.tabItems.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1412,6 +1505,14 @@
         private System.Windows.Forms.LinkLabel linkLabel4;
         private System.Windows.Forms.LinkLabel linkLabel3;
         private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.TextBox tbxMinIvToKeep;
+        private System.Windows.Forms.TextBox tbxMinCpToKeep;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.GroupBox groupBox11;
+        private System.Windows.Forms.RadioButton rbxPriorityIV;
+        private System.Windows.Forms.RadioButton rbxPriorityCP;
     }
 }
 

@@ -36,7 +36,10 @@ namespace PokemonGo.RocketAPI.Console
 
         public bool TransferDoublePokemons => Globals.transfer;
         public int DontTransferWithCPOver => Globals.maxCp;
+        public int TransferWithCPUnder => Globals.minCp;
         public int ivmaxpercent => Globals.ivmaxpercent;
+        public int ivminpercent => Globals.ivminpercent;
+        public string Priority => Globals.priority;
 
         public bool EvolvePokemonsIfEnoughCandy => Globals.evolve;
 

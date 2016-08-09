@@ -243,6 +243,22 @@ namespace PokemonGo.RocketAPI.Console
                         case 26:
                             chkUseBasicIncubators.Checked = bool.Parse(line);
                             break;
+                        case 27:
+                            if (line == "IV")
+                            {
+                                rbxPriorityIV.Checked = true;
+                            }
+                            else
+                            {
+                                rbxPriorityCP.Checked = true;
+                            }
+                            break;
+                        case 28:
+                            tbxMinCpToKeep.Text = line;
+                            break;
+                        case 29:
+                            tbxMinIvToKeep.Text = line;
+                            break;
                         default:
                             TextBox temp = (TextBox)Controls.Find("textBox" + tb, true).FirstOrDefault();
                             temp.Text = line;
@@ -262,6 +278,8 @@ namespace PokemonGo.RocketAPI.Console
                 textBox8.Text = "3";
                 textBox9.Text = "999";
                 textBox20.Text = "5000";
+                tbxMinCpToKeep.Text = "500";
+                tbxMinIvToKeep.Text = "50";
             }
 
             if (File.Exists(Program.items))
@@ -471,6 +489,14 @@ namespace PokemonGo.RocketAPI.Console
             else
                 Globals.maxCp = int.Parse(textBox9.Text);
 
+            if (tbxMinCpToKeep.Text == string.Empty)
+            {
+                tbxMinCpToKeep.BackColor = Color.Red;
+                return;
+            }
+            else
+                Globals.minCp = int.Parse(tbxMinCpToKeep.Text);
+
             Globals.transfer = checkBox2.Checked;
             Globals.defLoc = checkBox1.Checked;
             Globals.evolve = checkBox3.Checked;
@@ -589,6 +615,15 @@ namespace PokemonGo.RocketAPI.Console
                 Globals.ivmaxpercent = int.Parse(textBox24.Text);
             }
 
+            if (tbxMinIvToKeep.Text == string.Empty)
+            {
+                tbxMinIvToKeep.BackColor = Color.Red;
+            }
+            else
+            {
+                Globals.ivminpercent = int.Parse(tbxMinIvToKeep.Text);
+            }
+
             Globals.gerNames = checkBox8.Checked;
             Globals.useincense = checkBox9.Checked;
             Globals.pokeList = checkBox10.Checked;
@@ -644,7 +679,10 @@ namespace PokemonGo.RocketAPI.Console
                     Globals.keepPokemonsThatCanEvolve.ToString(),
                     Globals.useLuckyEggIfNotRunning.ToString(),
                     Globals.autoIncubate.ToString(),
-                    Globals.useBasicIncubators.ToString()
+                    Globals.useBasicIncubators.ToString(),
+                    Globals.priority,
+                    Globals.minCp.ToString(),
+                    Globals.ivminpercent.ToString(),
             };
             File.WriteAllLines(@Program.account, accFile);
 

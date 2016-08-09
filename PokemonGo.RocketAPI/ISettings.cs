@@ -31,7 +31,10 @@ namespace PokemonGo.RocketAPI
         bool TransferDoublePokemons { get; }
 
         int DontTransferWithCPOver { get; }
+        int TransferWithCPUnder { get; }
         int ivmaxpercent { get; }
+        int ivminpercent { get; }
+        string Priority { get; }
 
         string TelegramAPIToken { get; }
         string TelegramName { get; }
