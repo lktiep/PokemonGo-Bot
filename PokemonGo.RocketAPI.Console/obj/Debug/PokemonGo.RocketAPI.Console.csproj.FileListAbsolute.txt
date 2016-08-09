@@ -82,7 +82,6 @@ C:\Users\Ari\Desktop\PokemonGo Bot\Github\PokemonGo-Bot\PokemonGo.RocketAPI.Cons
 C:\Users\Ari\Desktop\PokemonGo Bot\Github\PokemonGo-Bot\PokemonGo.RocketAPI.Console\obj\Debug\PokemonGo.RocketAPI.Console.Pokemons.resources
 C:\Users\Ari\Desktop\PokemonGo Bot\Github\PokemonGo-Bot\PokemonGo.RocketAPI.Console\obj\Debug\PokemonGo.RocketAPI.Console.Properties.Resources.resources
 C:\Users\Ari\Desktop\PokemonGo Bot\Github\PokemonGo-Bot\PokemonGo.RocketAPI.Console\obj\Debug\PokemonGo.RocketAPI.Console.csproj.GenerateResource.Cache
-D:\projects\PokemonGo-Bot\PokemonGo.RocketAPI.Console\bin\Debug\PokemonGo.RocketAPI.Console.exe.config
 D:\projects\PokemonGo-Bot\PokemonGo.RocketAPI.Console\bin\Debug\PokemonGo.RocketAPI.Console.exe
 D:\projects\PokemonGo-Bot\PokemonGo.RocketAPI.Console\bin\Debug\PokemonGo.RocketAPI.Console.pdb
 D:\projects\PokemonGo-Bot\PokemonGo.RocketAPI.Console\bin\Debug\GMap.NET.Core.dll

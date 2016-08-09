@@ -1,10 +1,8 @@
-# Donate
-  - Every Donation will help the Project!
-  - 
-[![PayPal Donation](https://www.paypalobjects.com/en_US/DE/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RUNUBQEANCAGQ)
-  - Bitcoin: 1PdQK9hhdLy83UKVQVop8bjnkSw17hj5z4
+# Information
+  - This is a folk repository which trying to make better application
 
 # Credits to:
+  - Original folk: https://github.com/Ar1i/PokemonGo-Bot
   - https://github.com/NECROBOTIO/NecroBot <- Without him this bot wont be alive, so please share some love! His Bot is awesome too!
   - https://github.com/Linewalker/POGOProtos-0.31.0
   - https://github.com/AeonLucid/POGOProtos
