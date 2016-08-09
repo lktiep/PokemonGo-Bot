@@ -124,7 +124,7 @@ namespace PokemonGo.RocketAPI.Logic
                         await StartIncubation();
                     }
 
-                    await TransferDuplicatePokemon(_clientSettings.keepPokemonsThatCanEvolve);
+                    await TransferDuplicatePokemon(_clientSettings);
                     await RecycleItems();
                     await ExecuteFarmingPokestopsAndPokemons(_client);
 
@@ -375,7 +375,7 @@ namespace PokemonGo.RocketAPI.Logic
                         await StartIncubation();
                     }
 
-                    await TransferDuplicatePokemon(_clientSettings.keepPokemonsThatCanEvolve);
+                    await TransferDuplicatePokemon(_clientSettings);
                     await RecycleItems();
 
                     ////
@@ -522,7 +522,7 @@ namespace PokemonGo.RocketAPI.Logic
                         await StartIncubation();
                     }
 
-                    await TransferDuplicatePokemon(_clientSettings.keepPokemonsThatCanEvolve);
+                    await TransferDuplicatePokemon(_clientSettings);
                     await RecycleItems();
                 }
 
@@ -691,11 +691,11 @@ namespace PokemonGo.RocketAPI.Logic
         }
 
 
-        private async Task TransferDuplicatePokemon(bool keepPokemonsThatCanEvolve = false)
+        private async Task TransferDuplicatePokemon(ISettings setting)
         {
             if (_clientSettings.TransferDoublePokemons)
             { 
-                var duplicatePokemons = await _client.Inventory.GetDuplicatePokemonToTransfer(keepPokemonsThatCanEvolve); 
+                var duplicatePokemons = await _client.Inventory.GetDuplicatePokemonToTransfer(setting); 
                 //var duplicatePokemons = await _client.Inventory.GetDuplicatePokemonToTransfer(keepPokemonsThatCanEvolve); Is doch retarded
  
 

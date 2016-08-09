@@ -403,6 +403,7 @@ namespace PokemonGo.RocketAPI.Console
         public static int duplicate = 3;
         public static bool evolve = true;
         public static int maxCp = 999;
+        public static int minCp = 500;
         public static int pokeball = 20;
         public static int greatball = 50;
         public static int ultraball = 100;
@@ -415,6 +416,8 @@ namespace PokemonGo.RocketAPI.Console
         public static int toprevive = 50;
         public static int berry = 50;
         public static int ivmaxpercent = 0;
+        public static int ivminpercent = 0;
+        public static string priority = "IV";
         public static List<PokemonId> noTransfer = new List<PokemonId>();
         public static List<PokemonId> noCatch = new List<PokemonId>();
         public static List<PokemonId> doEvolve = new List<PokemonId>();

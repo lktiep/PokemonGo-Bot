@@ -10,6 +10,7 @@ using POGOProtos.Networking.Requests.Messages;
 using POGOProtos.Networking.Responses;
 using POGOProtos.Data.Player;
 using System.IO;
+using System.Security.Cryptography.X509Certificates;
 using POGOProtos.Data;
 using POGOProtos.Settings.Master;
 using POGOProtos.Inventory;
@@ -427,7 +428,7 @@ namespace PokemonGo.RocketAPI.Rpc
             return null;
         }
 
-        public async Task<IEnumerable<PokemonData>> GetDuplicatePokemonToTransfer(bool keepPokemonsThatCanEvolve = false, bool orderByIv = false)
+        public async Task<IEnumerable<PokemonData>> GetDuplicatePokemonToTransfer(ISettings setting)
         {
             var myPokemon = await GetPokemons();
 
@@ -435,7 +436,7 @@ namespace PokemonGo.RocketAPI.Rpc
 
             var pokemonList = myPokemonList.Where(p => p.DeployedFortId == string.Empty && p.Favorite == 0).ToList();
 
-            if (keepPokemonsThatCanEvolve)
+            if (setting.keepPokemonsThatCanEvolve)
             {
                 var results = new List<PokemonData>();
                 var pokemonsThatCanBeTransfered = pokemonList.GroupBy(p => p.PokemonId)
@@ -462,13 +463,20 @@ namespace PokemonGo.RocketAPI.Rpc
                     {
                         amountToSkip = _client.Settings.HoldMaxDoublePokemons;
                     }
-                    if (orderByIv)
+
+
+                    if (setting.Priority == "IV")
                     {
-                        results.AddRange(pokemonList.Where(x => x.PokemonId == pokemon.Key)
-                                                    .OrderByDescending(PokemonInfo.CalculatePokemonPerfection)
-                                                    .ThenBy(n => n.StaminaMax)
-                                                    .Skip(amountToSkip)
-                                                    .ToList());  
+                        var transferList = pokemonList
+                            .Where(x => x.PokemonId == pokemon.Key 
+                                        && x.Cp < setting.TransferWithCPUnder
+                                        && PokemonInfo.CalculatePokemonPerfection(x) < setting.ivminpercent)
+                            .OrderByDescending(PokemonInfo.CalculatePokemonPerfection)
+                            .ThenBy(n => n.StaminaMax);
+
+                        results.AddRange(transferList.Count() >= amountToSkip
+                            ? transferList.Skip(amountToSkip)
+                            : transferList);
                     }
                     else
                     {
@@ -484,7 +492,7 @@ namespace PokemonGo.RocketAPI.Rpc
                 return results;
             }
 
-            if (orderByIv)
+            if (setting.Priority == "IV")
             {
                 return pokemonList
                     .GroupBy(p => p.PokemonId)
